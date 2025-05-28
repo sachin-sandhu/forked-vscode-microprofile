@@ -1,11 +1,13 @@
 version: 2
 updates:
-- package-ecosystem: npm
+- package-ecosystem: "npm"
   directory: "/"
   schedule:
-    interval: daily
+    interval: "cron"
+    cronjob: "0 8 * * 2,4"
   open-pull-requests-limit: 10
   groups:
-    typescript-eslint:
+    eslint:
       patterns:
-      - "@typescript-eslint/*"
+        - "eslint"
+        - "@eslint/js"
