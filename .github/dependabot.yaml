@@ -1,13 +1,11 @@
 version: 2
 updates:
-- package-ecosystem: "npm"
-  directory: "/"
-  schedule:
-    interval: "cron"
-    cronjob: "0 8 * * 2,4"
-  open-pull-requests-limit: 10
-  groups:
-    eslint:
-      patterns:
-        - "eslint"
-        - "@eslint/js"
+  # Enable version updates for npm
+  - package-ecosystem: "pip"
+    # Look for `package.json` and `lock` files in the `root` directory
+    directory: "/"
+    # Check the npm registry for updates based on `cronjob` value
+    schedule:
+      interval: "cron"
+      cronjob: "20 9 * * 1-5"
+      timezone: "Asia/Tokyo"
